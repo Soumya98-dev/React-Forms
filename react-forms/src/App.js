@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 
 function App() {
-  const [formData, getFormData] = React.useState({
+  const [formData, setFormData] = React.useState({
     email: "",
     password: "",
     confirmPassword: "",
@@ -23,7 +23,7 @@ function App() {
 
   function handleChange(event) {
     const { name, value, type, checked } = event.target;
-    getFormData((prevFormData) => {
+    setFormData((prevFormData) => {
       return {
         ...prevFormData,
         [name]: type == "checkbox" ? checked : value,
@@ -45,7 +45,7 @@ function App() {
         type="password"
         placeholder="Password"
         name="password"
-        // value={formData.password}
+        value={formData.password}
         onChange={handleChange}
       ></input>
       <br></br>
@@ -53,7 +53,7 @@ function App() {
         type="password"
         placeholder="Confirm Password"
         name="confirmPassword"
-        // value={formData.confirmPassword}
+        value={formData.confirmPassword}
         onChange={handleChange}
       ></input>
       <br></br>
