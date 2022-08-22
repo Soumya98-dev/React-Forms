@@ -15,6 +15,7 @@ function App() {
       console.log("Successfully signed up");
     } else {
       console.log("Passwords donot match");
+      return;
     }
     if (formData.joinNewsletter === true) {
       console.log("Thanks for signing up for our newsletter!");
